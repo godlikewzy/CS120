@@ -2,12 +2,188 @@
 <html>
 
 <head>
-	<title>Me Two</title>
-	<meta charset="utf-8"  />
+	<title>CSS Style Page</title>
+	<meta charset="utf-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+        <style type="text/css">
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+
+            h1, h2{
+                color: #458dec;
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            ul {
+                border: 2px solid black;
+                padding: 30px;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+            .food-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .food-image {
+                width: 232px;
+                height: 232px;
+                background-image: url('https://static.wixstatic.com/media/303e6c_f47aab33bc2e40c89c223f788b3f16b2~mv2.jpg/v1/fill/w_232,h_232,usm_1.20_1.00_0.01/file.webp');
+                background-size: cover;
+                background-position: center;
+                margin-right: 20px;
+            }
+
+            .food-explanatory {
+                flex: 1;
+            }
+
+            table {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                text-align: left;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #e6ceaa;
+            }
+
+            form {
+                width: 30%;
+                margin-top: 30px;
+                margin-left: 0px;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 10px;
+            }
+
+            label {
+                text-align: right;
+                margin-right: 10px;
+            }
+
+            .icons {
+                position: fixed;
+                top: 100px;
+                right: 35px;
+            }
+
+            .facebook-icon {
+                width: 50px;
+                height: 50px;
+                background-image: url('https://img.icons8.com/?size=100&id=118497&format=png&color=000000');
+                background-size: cover;
+                background-position: center;
+            }
+
+            .twitter-icon {
+                width: 50px;
+                height: 50px;
+                background-image: url('https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000');
+                background-size: cover;
+                background-position: center;
+            }
+        </style>
+
 </head>
 
-<body style="display: flex; justify-content: center;">
-    <h1>Coming Soon</h1>
-</body>
+<body>
 
+    <h1>Zhenyi Wu</h1>
+    <p>Last summer, I traveled to Acadia National Park with my friends. We chose a challenging trail and climbed to the top of Cadillac Mountain.
+    During the climb, it started raining heavily, making the hike even more difficult. At one point, we had to use both hands and feet to make sure we won't roll down the hill.
+    Despite the hardships, when we reached the summit and looked at the stunning view around us, it was all worth it!</p>
+    
+    <h2>My Favorite Pets</h2>
+    <ul>
+        <li>A cat named "JiuJiu" - Tabby Cat</li>
+        <li>A cat named "Coffee" - American Longhair</li>
+        <li>A dog named "Oscar" - Border Collie</li>
+    </ul>
+
+    <h2>My Favorite Restaurant</h2>
+    <p>One of my favorite places to eat is <a href="https://www.seibarwakefield.com/" target="_blank">Sei Bar</a>. It serves the most authentic Hunan cuisine,
+    which is also the food from my hometown. Almost every dish they offer brings me the nostalgic taste of home.</p>
+    
+    <h2>My Favorite Food</h2>
+    <div class="food-container">
+        <div class="food-image"></div>
+        <div class="food-explanatory">My favorite food is stir-fried beef, especially when cooked with cilantro and chili. This dish is spicy and salty, making it the perfect companion for rice.
+            After finishing the beef, I love pouring the remaining sauce over the rice. If you usually eat just one bowl of rice, trust me, with this dish,
+            you might finish three bowls and still crave more!
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <h2>My Favorite Books</h2>
+    <table>
+        <tr >
+            <th>Book Name</th>
+            <th>Cover</th>
+            <th>Author</th>
+            <th>Summary</th>
+        </tr>
+        <tr>
+            <td>Harry Potter and the Deathly Hallows</td>
+            <td><img src="https://th.bing.com/th/id/OIP.BrXvhAhfNABJAQTqT6UjZwHaLd?w=200&h=311&c=7&r=0&o=5&pid=1.7" style="object-fit: cover; display: block; margin: auto; padding: 5px;"></td>
+            <td>J.K. Rowling</td>
+            <td>The final book in the Harry Potter series, following Harry's last battle against Voldemort and the culmination of his journey at Hogwarts.</td>
+        </tr>
+        <tr>
+            <td>The Wonderful Wizard of Oz</td>
+            <td><img src="https://th.bing.com/th/id/OIP.1DAOXAEkrJ9wgKMuwCCeuAHaJo?w=203&h=264&c=7&r=0&o=5&pid=1.7" style="object-fit: cover; display: block; margin: auto; padding: 5px;"></td>
+            <td>L. Frank Baum</td>
+            <td>A classic children's novel about a young girl named Dorothy who is transported to the magical land of Oz and embarks on a journey to find her way back home.</td>
+        </tr>
+        <tr>
+            <td>One Thousand and One Nights</td>
+            <td><img src="https://th.bing.com/th/id/OIP.ZTF-IZ_Pz3wl5XM1i-49gAHaJ3?w=203&h=271&c=7&r=0&o=5&pid=1.7" style="object-fit: cover; display: block; margin: auto; padding: 5px;"></td>
+            <td>Various Authors</td>
+            <td>A collection of Middle Eastern folk tales featuring stories of adventure, romance, and moral lessons.</td>
+        </tr>
+        <tr>
+            <td>Les Misérables</td>
+            <td><img src="https://th.bing.com/th/id/OIP.5ZPLLsuwDdy0GkJJNZuSPAHaL8?w=196&h=317&c=7&r=0&o=5&pid=1.7" style="object-fit: cover; display: block; margin: auto; padding: 5px;"></td>
+            <td>Victor Hugo</td>
+            <td>A historical novel that explores themes of justice, redemption, and the struggles of the poor in post-revolutionary France.</td>
+        </tr>
+    </table>
+
+    <form>
+        <label>First Name:</label>
+        <input type="text">
+
+        <label>Last Name:</label>
+        <input type="text">
+
+        <label>City:</label>
+        <input type="text">
+
+        <label>State:</label>
+        <select>
+            <option>Massachusetts</option>
+            <option>New York</option>
+            <option>Nevada</option>
+            <option>California</option>
+            <option>Texas</option>
+        </select>
+
+        <input type="submit" value="Submit" style="grid-column: 2 / 3;">
+    </form>
+
+    <div class="icons">
+        <div class="facebook-icon"></div>
+        <div class="twitter-icon"></div>
+    </div>
+
+</body>
 </html>
