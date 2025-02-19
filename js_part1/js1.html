@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+    <script>
+        function askUser() {
+            let firstName = prompt("Enter your first name:");
+            let lastName = prompt("Enter your last name:");
+            alert("Your name is " + firstName + " " + lastName);
+
+            let num_children = parseInt(prompt("How many children do you have?"), 10);
+            let message;
+            if (isNaN(num_children)) {
+                message = "Please enter a number.";
+            } else if (num_children === 0) {
+                message = "You have no children.";
+            } else if (num_children === 1) {
+                message = "You have 1 child.";
+            } else {
+                message = "You have " + num_children + " children.";
+            }
+
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+</head>
+
+<body onload="askUser()">
+    <p id="result"></p>
+</body>
+</html>

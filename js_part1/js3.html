@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+    <script>
+        function sortTwoNumbers() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+            }
+            else {
+                if (num1 > num2) {
+                    console.log("The numbers in ascending order are: " + num2 + ", " + num1);
+                } 
+                else {
+                    console.log("The numbers in ascending order are: " + num1 + ", " + num2);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="sortTwoNumbers()"></body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 4</title>
+    <script>
+        function oddNumbersSum() {
+            let num1 = parseInt(prompt("Enter the first number:"), 10);
+            let num2 = parseInt(prompt("Enter the second number:"), 10);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+            
+            if (num1 > num2) {
+                let temp = num1;
+                num1 = num2;
+                num2 = temp;
+            }
+            
+            let sum = 0;
+            let oddNumbers = "";
+            let flag = 0;
+            
+            for (let i = num1; i <= num2; i++) {
+                sum += i;
+                if (i % 2 !== 0) {
+                    flag ++;
+                    if (flag == 1) {
+                        oddNumbers += i;
+                    }
+                    else {
+                        oddNumbers += ", " + i;
+                    }
+                }
+            }
+            
+            document.getElementById("odd-numbers").innerText = "Odd numbers in range: " + oddNumbers;
+            document.getElementById("sum").innerText = "Sum of all numbers in range: " + sum;
+        }
+    </script>
+</head>
+
+<body onload="oddNumbersSum()">
+    <p id="odd-numbers"></p>
+    <p id="sum"></p>
+</body>
+</html>
