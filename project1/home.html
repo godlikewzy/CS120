@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- fixed navigation -->
+    <header style="position: fixed; top: 0; width: 100%; z-index: 100;">
+        <nav class="main-nav">
+            <a href="home.html">HomePage</a>
+            <a href="album.html">Albums</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main style="margin: 25px 20%;">
+        <!-- side bar -->
+        <aside class="sidebar">
+            <a href="#carousel">Picture Display</a>
+            <a href="#player">Music Player</a>
+            <a href="#playlist">Music PlayList</a>
+        </aside>
+
+        <!-- picture display -->
+        <div class="carousel" id="carousel">
+            <button class="carousel-btn prev">&lt</button>
+            <div class="carousel-inner"></div>
+            <button class="carousel-btn next">&gt</button>
+
+            <div class="carousel-indicators">
+                <div class="indicator active"></div>
+                <!-- can add onclick event to the indicator to change the image -->
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+
+        <!-- music player -->
+        <section id="player">
+            <div id="audio-player">
+                <div class="player-container">
+                    <!-- left control -->
+                    <div class="left-controls">
+                        <img src="./img/cover.jpg" alt="music cover" class="music-cover">
+                        <div class="song-info">
+                            <h3>A Thousand Years</h3>
+                            <p>Pink Bend</p>
+                        </div>
+                    </div>
+        
+                    <!-- center control -->
+                    <div class="center-controls">
+                        <button class="control-btn" id="loop-btn">🔁</button>
+                        <button class="control-btn" id="prev-btn">⏮</button>
+                        <button class="control-btn" id="play-btn">▶</button>
+                        <button class="control-btn" id="next-btn">⏭</button>
+                        <div class="volume-control">
+                            <div class="icon">🔊</div>
+                            <input type="range" id="volume" min="0" max="1" step="0.1" value="1" style="accent-color: #FFB6C1;">
+                        </div>
+                    </div>
+        
+                    <!-- right control -->
+                    <div class="right-controls">
+                        <div class="progress-container">
+                            <input type="range" id="progress" value="0" style="accent-color: #FFB6C1;">
+                            <div class="time-display">
+                                <span id="current-time">00:00</span>
+                                <span>/</span>
+                                <span id="duration">4:38</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- music playlist -->
+        <section id="playlist">
+            <table>
+                <thead>
+                    <tr class="tr-item" >
+                        <th style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Song Name</th>
+                        <th style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Album</th>
+                        <th style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Duration</th>
+                        <th style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-item">
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">A Thousand Years</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Wedding Collection</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">4:58</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">▶ ⬇</td>
+                    </tr>
+                    <tr class="tr-item">
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">My Love</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Wedding Collection</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">3:52</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">▶ ⬇</td>
+                    </tr>
+                    <tr class="tr-item">
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Beautiful in White</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">Wedding Collection</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">3:35</td>
+                        <td style="border-bottom: 1px solid var(--primary-color, #ff69b4);">▶ ⬇</td>
+                    </tr>
+                    <tr class="tr-item">
+                        <td>Affirmation</td>
+                        <td>Wedding Collection</td>
+                        <td>4:56</td>
+                        <td>▶ ⬇</td>
+                    </tr>
+                    <!-- maybe more musics... -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- fixed footer -->
+    <footer class="footer">
+        <p>Email: Zhenyi.Wu@tufts.edu</p>
+        <p>Copyright © Zhenyi 2025</p>
+    </footer>
+
+</body>
+</html>

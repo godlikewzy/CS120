@@ -1,0 +1,273 @@
+:root {
+    --primary-color: #FFB6C1;
+    --secondary-color: #FFF0F5;
+    --dark-gray: #808080;
+}
+
+
+body {
+    margin: 0;
+    padding: 80px 0 60px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.main-nav {
+    background-color: var(--primary-color);
+    /* padding: 15px; */
+    display: flex;
+    justify-content: space-around;
+    
+
+
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 25px;
+    width: 25%;
+    text-align: center;
+    /* flex: 1; */
+    /* display: block; */
+}
+
+.main-nav a:hover {
+    background-color: rgb(255, 164, 187);
+}
+
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #abaaaa7c;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 20px 0;
+    text-decoration: none;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/a thousand years.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    opacity: 0.8;
+}
+
+.prev { 
+    left: 0;
+}
+
+.next { 
+    right: 0;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dark-gray);
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: var(--primary-color);
+}
+
+#audio-player {
+    background-color: #fff3e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.player-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.left-controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* min-width: 250px; */
+}
+
+.music-cover {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.song-info h3 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.song-info p {
+    margin: 5px 0 0;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.center-controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    width: 12.5%;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    opacity: 0.5;
+}
+
+.volume-control {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 5px; */
+}
+
+#volume {
+    width: 100%;
+    max-width: 100px;
+}
+
+.right-controls {
+    flex: 2;
+    margin-top: 23px;
+    /* transform: translateY(50%); */
+    /* min-width: 200px; */
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#progress {
+    width: 100%;
+    height: 4px;
+}
+
+.time-display {
+    display: flex;
+    gap: 4px;
+    font-size: 0.9em;
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .player-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .left-controls {
+        justify-content: center;
+    }
+    
+    .center-controls {
+        justify-content: center;
+    }
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--primary-color, #ff69b4);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px  var(--primary-color, #ff69b4);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: small;
+}
+.footer p {
+    line-height: 0.5em;
+  }
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; 
+    }
+}

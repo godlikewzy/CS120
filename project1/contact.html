@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            width: 100vw;
+            /* border: 1px solid black; */
+            /* padding: 20px; */
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            /* border: 1px solid black; */
+            display: inline-block;
+            text-align: left;
+            background-color: #fff3e6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin:30px 50px 30px 0px;
+            display: flex;
+        }
+
+        .name-group {
+            margin:30px 50px 30px 20px;
+            display: flex;
+        }
+
+        .name-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .name-item label {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: right;
+            align-items: center;
+            margin: 10px 30px 10px 0px;
+            font-weight: bold;
+            width: 120px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFB6C1;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-buttons button:hover {
+            background-color: rgb(255, 164, 187);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- fixed navigation -->
+    <header style="position: fixed; top: 0; width: 100%; z-index: 100;">
+        <nav class="main-nav">
+            <a href="home.html">HomePage</a>
+            <a href="album.html">Albums</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us for Your Wedding</h1>
+        <form>
+            <div class="form-group name-group">
+                <div class="name-item">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="name-item">
+                    <label for="surname">Last Name</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Pronouns</label>
+                <select style="
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            box-sizing: border-box;">
+                    <option>He/Him/His</option>
+                    <option>She/Her/Hers</option>
+                    <option>They/Them/Theirs</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Adress</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="event-theme">Event Details</label>
+                <textarea id="event-theme" name="event-theme" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </main>
+
+     <!-- fixed footer -->
+     <footer class="footer">
+        <p>Email: Zhenyi.Wu@tufts.edu</p>
+        <p>Copyright © Zhenyi 2025</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .album-container {
+            height: 70vh;
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .album-left {
+            /* border: 1px solid #ddd; */
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .album-cover {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .album-title {
+            font-size: 2em;
+        }
+
+        .album-right {
+            /* border: 1px solid #ddd; */
+            flex: 2;
+        }
+
+        .song-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .song-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .song-item:last-child {
+            border-bottom: none;
+        }
+
+        .song-name {
+            font-weight: bold;
+        }
+
+        .song-duration {
+            color: #888;
+        }
+
+        @media (max-width: 900px) {
+            .album-container {
+                flex-direction: column;
+            }
+
+            .album-cover {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head> 
+<body>
+    <!-- fixed navigation -->
+    <header style="position: fixed; top: 0; width: 100%; z-index: 100;">
+        <nav class="main-nav">
+            <a href="home.html">HomePage</a>
+            <a href="album.html">Albums</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main style="margin: 25px;">
+        <div class="album-container">
+            <!-- left side -->
+            <div class="album-left">
+                <img src="./img/cover.jpg" alt="album-cover" class="album-cover">
+                <h1 class="album-title">Wedding Collection</h1>
+            </div>
+
+            <!-- right side -->
+            <div class="album-right">
+                <h2 style="margin: 0;">Music List</h2>
+                <ul class="song-list">
+                    <li class="song-item">
+                        <span class="song-name">A Thousand Years</span>
+                        <span class="song-duration">4:58</span>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-name">My Love</span>
+                        <span class="song-duration">3:52</span>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-name">Beautiful in White</span>
+                        <span class="song-duration">3:35</span>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-name">Affirmation</span>
+                        <span class="song-duration">4:56</span>
+                    </li>
+                    <li class="song-item">
+                        <span class="song-name">My Heart Will Go On</span>
+                        <span class="song-duration">4:40</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- fixed footer -->
+    <footer class="footer">
+        <p>Email: Zhenyi.Wu@tufts.edu</p>
+        <p>Copyright © Zhenyi 2025</p>
+    </footer>
+</body>
+</html>
