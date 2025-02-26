@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 6</title>
+    <script>
+        window.onload = function() {
+            let states = ["Massachusetts", "New York", "New Jersey", "California", "Florida", "Neveda", "Texas", "Washington", "Los Angeles", "Las Vegas"];
+            let select = document.getElementById("state-list");
+            let outputDiv = document.getElementById("selected-states");
+            
+
+            let options = states.map((state, index) => {
+                if (index === 0) {
+                    return `<option value="${state}" selected>${state}</option>`;
+                }
+                else {
+                    return `<option value="${state}">${state}</option>`;
+                }
+            }).join("");
+            select.innerHTML = options;
+            // console.log(options);
+            
+
+            document.getElementById("add-state").addEventListener("click", () => {
+                selectedState = select.value;
+                if (selectedState) {
+                    selectedStateHTML = `<p>${select.value}</p>`;
+                    outputDiv.innerHTML += selectedStateHTML;
+                }
+            });
+            
+
+            document.getElementById("clear-states").addEventListener("click", () => {
+                outputDiv.innerHTML = "";
+            });
+        };
+    </script>
+    <style>
+        #selected-states {
+            border: 2px solid black;
+            margin: 20px 0;
+            width: 20%;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <select id="state-list" size="10"></select>
+    <button id="add-state">Add State</button>
+    <div id="selected-states"></div>
+    <button id="clear-states">Clear States</button>
+</body>
+</html>
