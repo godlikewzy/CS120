@@ -1,0 +1,10 @@
+[
+    { "title": "Bohemian Rhapsody", "artist": "Queen", "year": 1975, "genre": ["Rock"] },
+    { "title": "Thriller", "artist": "Michael Jackson", "year": 1982, "genre": ["Pop"] },
+    { "title": "Hotel California", "artist": "Eagles", "year": 1976, "genre": ["Rock"] },
+    { "title": "Like a Rolling Stone", "artist": "Bob Dylan", "year": 1965, "genre": ["Rock", "Folk"] },
+    { "title": "Billie Jean", "artist": "Michael Jackson", "year": 1983, "genre": ["Pop"] },
+    { "title": "Sweet Child O' Mine", "artist": "Guns N' Roses", "year": 1987, "genre": ["Rock"] },
+    { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "year": 1991, "genre": ["Rock", "Grunge"] },
+    { "title": "Jolene", "artist": "Dolly Parton", "year": 1973, "genre": ["Country"] }
+]
