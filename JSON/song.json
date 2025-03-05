@@ -1,10 +1,11 @@
 [
-    { "title": "Bohemian Rhapsody", "artist": "Queen", "year": 1975, "genre": ["Rock"] },
-    { "title": "Thriller", "artist": "Michael Jackson", "year": 1982, "genre": ["Pop"] },
-    { "title": "Hotel California", "artist": "Eagles", "year": 1976, "genre": ["Rock"] },
-    { "title": "Like a Rolling Stone", "artist": "Bob Dylan", "year": 1965, "genre": ["Rock", "Folk"] },
-    { "title": "Billie Jean", "artist": "Michael Jackson", "year": 1983, "genre": ["Pop"] },
-    { "title": "Sweet Child O' Mine", "artist": "Guns N' Roses", "year": 1987, "genre": ["Rock"] },
-    { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "year": 1991, "genre": ["Rock", "Grunge"] },
-    { "title": "Jolene", "artist": "Dolly Parton", "year": 1973, "genre": ["Country"] }
+    { "title": "Who Loves You", "artist": "The Four Seasons", "year": 1975, "genre": ["Rock", "Disco"] },
+    { "title": "A Thousand Years", "artist": "Christina Perri", "year": 2011, "genre": ["Pop, Folk"] },
+    { "title": "My Love", "artist": "Westlife", "year": 2000, "genre": ["Pop"] },
+    { "title": "Beautiful in White", "artist": "Shane Filan", "year": 2017, "genre": ["Pop"] },
+    { "title": "Affirmation", "artist": "Savage Garden", "year": 1999, "genre": ["Pop", "Rock"] },
+    { "title": "Counting Stars", "artist": "OneRepublic", "year": 2013, "genre": ["Pop", "Rock"] },
+    { "title": "She is My Sin", "artist": "Nightwish", "year": 2000, "genre": ["Metal"] },
+    { "title": "Numb", "artist": "Linkin Park", "year": 2003, "genre": ["Rock", "Metal"] },
+    { "title": "Love Story", "artist": "Taylor Swift", "year": 2008, "genre": ["Pop", "Folk"] }
 ]
