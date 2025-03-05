@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.onload = (() => {
+            $.getJSON("https://godlikewzy.github.io/CS120/JSON/song.json", (data) => {
+                songData = data;
+                let output = "";
+                // generate HTML for each song
+                songData.forEach((song) => {
+                    output += `<div class='song'>
+                                <h1>${song.title}</h1>
+                                <p><strong>Artist:</strong> ${song.artist}</p>
+                                <p><strong>Genre:</strong> ${song.genre.join(", ")}</p>
+                                <p><strong>Released:</strong> ${song.year}</p>
+                               </div>`;
+                });
+                document.getElementById("song-list").innerHTML = output;
+            });
+        });
+    </script>
+    <style>
+        .song {
+            padding: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="song-list"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        window.onload = (() => {
+            let songsData = [];
+            let genresSet = new Set();
+
+            $.getJSON("https://godlikewzy.github.io/CS120/JSON/song.json", (data) => {
+                songsData = data;
+                
+                // Extract genres
+                data.forEach(song => {
+                    song.genre.forEach((g) => genresSet.add(g));
+                });
+                let output = "";
+                genresSet.forEach(genre => output += `<option>${genre}</option>`);
+                document.getElementById("genre-select").innerHTML = output;
+            });
+            
+            // Filter button event
+            document.getElementById("filter-button").addEventListener("click", () => {
+                let selectedGenre = document.getElementById("genre-select").value;
+                let output = "";
+                // Filter songs by selected genre
+                songsData.forEach(song => {
+                    if (song.genre.includes(selectedGenre)) {
+                        output += `<p>${song.title}</p>`;
+                    }
+                });
+                document.getElementById("filtered-songs").innerHTML = output;
+            });
+        });
+    </script>
+    <style>
+        #filtered-songs {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return false">
+        <label for="genre-select">Select genre:</label>
+        <select id="genre-select"></select>
+        <button id="filter-button">Filter</button>
+        <div id="filtered-songs"></div>
+    </form>
+</body>
+</html>
