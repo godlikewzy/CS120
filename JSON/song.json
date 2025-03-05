@@ -1,6 +1,6 @@
 [
     { "title": "Who Loves You", "artist": "The Four Seasons", "year": 1975, "genre": ["Rock", "Disco"] },
-    { "title": "A Thousand Years", "artist": "Christina Perri", "year": 2011, "genre": ["Pop, Folk"] },
+    { "title": "A Thousand Years", "artist": "Christina Perri", "year": 2011, "genre": ["Pop", "Folk"] },
     { "title": "My Love", "artist": "Westlife", "year": 2000, "genre": ["Pop"] },
     { "title": "Beautiful in White", "artist": "Shane Filan", "year": 2017, "genre": ["Pop"] },
     { "title": "Affirmation", "artist": "Savage Garden", "year": 1999, "genre": ["Pop", "Rock"] },
