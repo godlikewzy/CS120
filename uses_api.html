@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breed Info Search</title>
+    <script>
+        function fetchCatBreed() {
+            // get the input value
+            let breedQuery = document.getElementById("breed-input").value.trim();
+            if (!breedQuery) return;
+            
+            let apiUrl = `https://api.thecatapi.com/v1/breeds/search?q=${encodeURIComponent(breedQuery)}&attach_image=1`;
+            
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    let resultDiv = document.getElementById("result");
+                    resultDiv.innerHTML = "";
+                    
+                    if (data.length > 0) {
+                        data.forEach(breed =>{
+                            // display breed info
+                            let breedInfo = `<div class='breed-info'>
+                                            <h2>${breed.name}</h2>
+                                            <p><strong>Weight:</strong> ${breed.weight.metric} kg</p>
+                                            <p><strong>Temperament:</strong> ${breed.temperament || "N/A"}</p>
+                                            <p><strong>Origin:</strong> ${breed.origin || "Unknown"}</p>
+                                            <p><strong>Description:</strong> ${breed.description || "No description available."}</p>
+                                            <p><strong>Life Span:</strong> ${breed.life_span} years</p>
+                                            <a href="${breed.wikipedia_url}" target="_blank">Wikipedia Link</a>
+                                         </div>`;
+                        
+                            resultDiv.innerHTML += breedInfo;
+                        });
+                    } else {
+                        resultDiv.innerHTML = "<p>No result found</p>";
+                    }
+                })
+                //error handling
+                .catch(error => {
+                    console.error("Error fetching breed info:", error);
+                    document.getElementById("result").innerHTML = "<p>Something went wrong</p>";
+                });
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        .breed-info {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #000000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cat Breed Info Search</h1>
+    <form id="breed-form" onsubmit="return false;">
+        <label for="breed-input">Enter Breed Name:</label>
+        <input type="text" id="breed-input" required>
+        <button type="button" onclick="fetchCatBreed()">Search</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
