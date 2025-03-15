@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to My Wordle Game</h1>
+    <div id = "matrix">
+        <script>
+            for (let i = 0; i < 6; i++) {
+                for (let j = 0; j < 5; j++) {
+                    document.write(`<div class='box box${i}${j}'></div>`);
+                }
+            }
+        </script>
+    </div>
+    <div id = "input">
+        <label>Enter your guess:</label>
+        <input type="text" id="guess-input" maxlength="5"/>
+        <button id="submit-button">Submit Guess</button>
+        <button id="clean-button" style="display: none;">Reset Game</button>
+    </div>
+    <hr/>
+    <div id = "alphabet">
+        <script>
+            let text = "";
+            for (let i = 1; i <= 26; i++) {
+                text += `<div class='char char${64+i}'>` + String.fromCharCode(64 + i) + "</div>";
+            }
+            document.write(text);
+        </script>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

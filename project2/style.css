@@ -1,0 +1,59 @@
+:root {
+    --totally-correct-color: #a7e9bb;
+    --text-correct-color: #ebdaa5;
+    --wrong-color: #c2bfb6;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+#matrix {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.box {
+    width: 6vh;
+    height: 6vh;
+    font-size: 24px;
+    text-align: center;
+    line-height: 6vh;
+    border: 2px solid #000000;
+}
+#input {
+    margin: 50px 0;
+}
+#input label {
+    font-size: 18px;
+}
+#guess-input {
+    width: 20vw;
+    max-width: 200px;
+    height: 5vh;
+    font-size: 20px;
+    margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#input button {
+    max-width: 15vw;
+    padding: 10px 10px;
+    font-size: 15px;
+    margin: 0 10px;
+}
+#alphabet {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    margin-top: 40px;
+}
+.char {
+    width: 6vh;
+    height: 6vh;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #000000;
+}
