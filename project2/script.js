@@ -40,7 +40,6 @@ async function validate_input(input) {
         console.error("Error fetching the dictionary API:", error);
         return false;
     }
-    
 }
 
 // handle the guess submission
@@ -56,6 +55,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
 
         // check the guess against the answer
         let isValid = await validate_input(guess);
+        // let isValid = true;
         if (!isValid) {
             alert("Please enter a valid word.");
             return;
@@ -63,23 +63,42 @@ document.getElementById("submit-button").addEventListener("click", async () => {
 
         // display the guessed character
         let correct_count = 0;
-        guess.split('').forEach((char, index) => {
+        let compare_set = answer.split('')
+
+        // Color the totally correct characters
+        let modified_guess = guess.split('').map((char, index) => {
             let box = document.querySelector(`.box${current_row}${index}`);
             let charBox = document.querySelector(`.char${char.toUpperCase().charCodeAt(0)}`);
             box.textContent = char.toUpperCase(); 
-            // Color the characters
             if (char === answer[index]) {
                 correct_count++;
+                // remove the totally correct character
+                compare_set[index] = null;
                 box.style.backgroundColor = "var(--totally-correct-color)";
                 charBox.style.backgroundColor = "var(--totally-correct-color)";
-            } else if (answer.includes(char)) {
+                // 'remove' the character from the guess to avoid double coloring
+                return '@';
+            }
+            return char;
+        });
+
+        // Color the remained characters
+        modified_guess.forEach((char, index) => {
+            // skip the totally correct character
+            if (char === '@') return;
+            let box = document.querySelector(`.box${current_row}${index}`);
+            let charBox = document.querySelector(`.char${char.toUpperCase().charCodeAt(0)}`);
+            if (compare_set.includes(char)) {
+                // remove the character from the set to avoid double coloring
+                compare_set[compare_set.indexOf(char)] = null;
                 box.style.backgroundColor = "var(--text-correct-color)";
                 charBox.style.backgroundColor = "var(--text-correct-color)";
             } else {
                 box.style.backgroundColor = "var(--wrong-color)";
                 charBox.style.backgroundColor = "var(--wrong-color)";
             }
-        });
+        })
+
         // check if the guess is correct
         if (correct_count === 5) {
             document.getElementById("clean-button").style.display = "inline-block";
