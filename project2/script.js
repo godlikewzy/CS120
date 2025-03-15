@@ -1,6 +1,6 @@
 // variables declaration
 let dictionary = ["fruit", "apple", "grape", "peach", "berry", "melon", "mango", "lemon", "mommy", "daddy", 
-    "shape", "angle", "curve", "plane", "point", "slope", "width", "depth", "shade", "phase",
+    "shape", "angle", "curve", "plane", "point", "slope", "width", "depth", "shade", "photo",
     "color", "black", "white", "green", "brown", "shoot", "speed", "swing", "dance", "skate"];
 
 let current_row = 0;
@@ -42,8 +42,38 @@ async function validate_input(input) {
     }
 }
 
+// set cookie function
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + "; path=/" + expires;
+}
+
+// get cookie function
+function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) == 0){
+            return c.substring(nameEQ.length, c.length);
+        }
+    }
+    return null;
+}
+
 // handle the guess submission
 document.getElementById("submit-button").addEventListener("click", async () => {
+    // get cookie values
+    let attempts = parseInt(getCookie("attempts") || 0) + 1;
+    setCookie("attempts", attempts, 365);
+    console.log("attempts: " + attempts);
+    let totalGames = parseInt(getCookie("totalGames") || 0);
+
     if (current_row < 6){
 
         // validate the input length
@@ -104,18 +134,33 @@ document.getElementById("submit-button").addEventListener("click", async () => {
             document.getElementById("clean-button").style.display = "inline-block";
             alert("Congratulations! You've guessed the word: " + answer);
             document.getElementById("submit-button").disabled = true;
+           
+            // Count the total games played
+            totalGames += 1;
+            setCookie("totalGames", totalGames, 365);
+            // Calculate and display average attempts per win
+            let avgAttempts = (attempts / totalGames) || 0;
+            console.log("Total games played: " + totalGames);
+            console.log("Average attempts per win: " + avgAttempts.toFixed(2));
             return;
         }
         else {
             alert("Wrong guessed: " + guess);
             current_row++;
         }
-        // Here can add cookie to count the number of attempts
     }
     if (current_row >= 6) {
         document.getElementById("clean-button").style.display = "inline-block";
         alert("Game over! The answer is: " + answer);
         document.getElementById("submit-button").disabled = true;
+        
+        // Count the total games played
+        totalGames += 1;
+        setCookie("totalGames", totalGames, 365);
+        // Calculate and display average attempts per win
+        let avgAttempts = (attempts / totalGames) || 0;
+        console.log("Total games played: " + totalGames);
+        console.log("Average attempts per win: " + avgAttempts.toFixed(2));
         return;
     }
     // clear the input for the next guess
