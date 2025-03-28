@@ -6,7 +6,7 @@
 
 <body>
 <?php
-// header('Content-Type: application/json');
+header('Content-Type: application/json');
 
 if (is_numeric($_GET['n'])) {
     $n = (int) $_GET['n'];
